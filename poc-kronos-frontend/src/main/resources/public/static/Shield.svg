@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Shield</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Shield">
+            <circle id="Oval-5" fill="#000000" cx="100" cy="100" r="100"></circle>
+            <polygon id="Shape" points="17.0974155 33.7972167 183.300199 33.7972167 183.300199 200 17.0974155 200"></polygon>
+            <path d="M100.5,39 L50,61.3636364 L50,94.9090909 C50,125.938636 71.5466667,154.955455 100.5,162 C129.453333,154.955455 151,125.938636 151,94.9090909 L151,61.3636364 L100.5,39 Z M89.2777778,128.454545 L66.8333333,106.090909 L74.745,98.2077273 L89.2777778,112.632273 L126.255,75.7881818 L134.166667,83.7272727 L89.2777778,128.454545 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

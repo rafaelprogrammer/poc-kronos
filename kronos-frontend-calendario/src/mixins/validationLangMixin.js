@@ -1,0 +1,26 @@
+import { validationMixin } from 'vuelidate';
+import { get } from 'lodash';
+
+export default {
+  mixins: [validationMixin],
+  methods: {
+    fieldErrors(name) {
+      let rule;
+      const errors = [];
+      const field = get(this.$v, name);
+      const messages = get(this.$options.validationMessages, name);
+
+      if (!field.$dirty) return errors;
+
+      if (messages) {
+        // eslint-disable-next-line no-restricted-syntax
+        for (rule in messages) {
+          if (field[rule] === false && messages[rule]) {
+            errors.push(this.$t(messages[rule]));
+          }
+        }
+      }
+      return errors;
+    },
+  },
+};

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Violate_Vuse_logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="4.74175347%" y1="6.4824178%" x2="84.5095486%" y2="96.2658207%" id="linearGradient-1">
+            <stop stop-color="#5387FD" offset="0%"></stop>
+            <stop stop-color="#6443D9" offset="45.4081633%"></stop>
+            <stop stop-color="#4D23AE" offset="100%"></stop>
+        </linearGradient>
+        <path d="M33,0 L100,134 L167,0 L200,0 L100,200 L0,0 L33,0 Z" id="path-2"></path>
+        <linearGradient x1="100%" y1="0%" x2="0%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#AC32E4" offset="0%"></stop>
+            <stop stop-color="#7918F2" offset="47.8728925%"></stop>
+            <stop stop-color="#4801FF" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-5" points="81 103.962054 10.8519423 121.5 61.1142783 69.5189732 81 0 100.885722 69.5189732 151.148058 121.5"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Violate_Vuse_logo">
+            <g id="V-black">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <rect id="Rectangle-2" fill="url(#linearGradient-4)" mask="url(#mask-3)" x="100" y="0" width="100" height="200"></rect>
+            </g>
+            <g id="M-Black" transform="translate(19.000000, 0.000000)">
+                <mask id="mask-6" fill="white">
+                    <use xlink:href="#path-5"></use>
+                </mask>
+                <use id="Mask" fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+                <rect id="Rectangle-3" fill="url(#linearGradient-1)" mask="url(#mask-6)" x="81" y="0" width="70" height="122"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

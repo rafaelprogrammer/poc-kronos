@@ -1,0 +1,19 @@
+spring:
+  banner:
+    location: classpath:banner-testes.txt
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: kronos
+    password: kronos
+    virtual-host: vhost_kronos
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    
+security:
+  token:
+    secret:
+      key: Asjfwol2asf123142Ags1k23hnSA36as6f4qQ324FEsvb
+      
+viacep:
+  url: https://viacep.com.br/ws

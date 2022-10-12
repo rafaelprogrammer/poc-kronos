@@ -1,0 +1,14 @@
+package br.leg.camara.kronos.backend.test.util;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+
+public class TestUtil {
+	public static HttpHeaders createHeadersSecurityToken() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		headers.set("x-auth-token",
+				"eyJhbGciOiJIUzUxMiJ9.eyJjbGllbnRUeXBlIjoidXNlciIsInRva2VuX2V4cGlyYXRpb25fZGF0ZSI6MTU2ODA4NzA5ODY2OCwidXNlcklEIjozLCJ1c2VybmFtZSI6InJhZmEuamVzdXNjcmlzdG9AZ21haWwuY29tIiwidG9rZW5fY3JlYXRlX2RhdGUiOnsiZGF5T2ZNb250aCI6MTAsImRheU9mV2VlayI6IlRVRVNEQVkiLCJkYXlPZlllYXIiOjI1MywieWVhciI6MjAxOSwibW9udGgiOiJTRVBURU1CRVIiLCJtb250aFZhbHVlIjo5LCJob3VyIjowLCJtaW51dGUiOjE0LCJzZWNvbmQiOjU4LCJuYW5vIjo2NjgwMDAwMDAsImNocm9ub2xvZ3kiOnsiaWQiOiJJU08iLCJjYWxlbmRhclR5cGUiOiJpc284NjAxIn19fQ.BMJFRf_fWHSGBNa1eQMZ5wnDk2u7Yz7y51lmwYgLtlpmM9morh5CoirEwZxNhIDvivm770TeSXhn6oUgmUa_yw");
+		return headers;
+	}
+}

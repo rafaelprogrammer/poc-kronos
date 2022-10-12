@@ -1,0 +1,78 @@
+$chat-user-avatar-width := 50px
+$chat-message-width := "calc(50% - %s)" % $chat-user-avatar-width
+$start-color := rgba(#BFCFE0, 0.4)
+$end-color := rgba(#e8f5e9, 0.5)
+.chat-thread
+  display: flex
+  align-items: flex-start
+  width: 100%
+  .user-avatar
+    width: $chat-user-avatar-width
+  .chat-message
+    position: relative
+    max-width: $chat-message-width
+  &.start
+    flex-direction: row
+    .chat-message
+      background-color: $start-color
+    .chat-thread-message
+      &:after
+        content ''
+        position absolute
+        left 0
+        bottom 10px
+        width 0
+        height 0
+        border 12px solid transparent
+        border-right-color $start-color
+        border-left 0
+        border-top 0
+        margin-left -12px
+  &.end
+    flex-direction: row-reverse
+    .user-avatar
+      @extend .text-xs-right
+    .chat-message
+      background-color: $end-color
+    .chat-thread-message
+      &:after
+        content ''
+        position absolute
+        right 0
+        bottom 10px
+        width 0
+        height 0
+        border 12px solid transparent
+        border-left-color $end-color
+        border-right 0
+        border-top 0
+        margin-right -12px
+.chat-theme
+  height: 360px
+
+.chat-nav-drawer
+  margin: 0 !important
+  padding: 0 !important
+  display: block
+  float left
+  height: calc(100vh - 200px) !important
+.chat-section
+  width: calc(100% - 300px)
+  margin: 0 !important
+  padding: 0 !important
+  display: block
+  float left
+  .chat-messaging-section
+    height: calc(100vh - 370px)
+    .chatscroll-statesetter
+      height 100%
+      overflow-y: auto
+@media (max-width: 959px)
+  .chat-nav-drawer.v-navigation-drawer--close
+    width: 0px !important
+    + .chat-section
+      width: 100%
+  .chat-nav-drawer.v-navigation-drawer--open
+    overflow-y: auto
+    + .chat-section
+      width: calc(100% - 80px)

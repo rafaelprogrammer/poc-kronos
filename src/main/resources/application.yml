@@ -1,0 +1,230 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: text/html,text/css,application/javascript,application/json
+    
+version: @project.version@
+  
+security:
+  token:
+    secret:
+      key: Asjfwol2asf123142Ags1k23hnSA36as6f4qQ324FEsvb
+
+viacep:
+  url: https://viacep.com.br/ws
+  
+
+---
+spring:
+  profiles: dev
+  cache:
+    type: redis
+    redis:
+      key-prefix: kronos
+  redis:
+#    ssl: true
+    host: localhost
+    port: 6379
+    password: Redis2019!
+    time-to-live: 300
+    url: 
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: kronos
+#    password: kronos
+#    virtual-host: vhost_kronos
+#    listener:
+#      simple:
+#        retry:
+#          enabled: true
+#          initial-interval: 300
+#          max-attempts: 200
+#          max-interval: 3600
+#          multiplier: 2
+  datasource:
+   hikari:
+     jdbc-url: jdbc:postgresql://localhost:5432/kronos
+     username: postgres
+     password: postgres
+     auto-commit: true
+     connection-timeout: 30000
+     idle-timeout: 600000
+     max-lifetime: 1800000
+     minimum-idle: 10
+     maximum-pool-size: 30
+     connection-test-query: SELECT 1
+     leak-detection-threshold: 30000
+     driver-class-name: org.postgresql.Driver
+  servlet:
+   multipart:
+     file-size-threshold: 2KB
+     max-file-size: 5MB
+     max-request-size: 5MB
+    
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari: TRACE
+    org:
+      springframework:
+        jdbc:
+          core: TRACE
+          
+---
+
+spring:
+  profiles: tes
+  redis:
+    ssl: true
+    host: localhost
+    port: 6379
+    password: 
+    time-to-live: ${TTL_CACHE_SECONDS}
+    url: ${REDISCLOUD_URL}
+#  rabbitmq:
+#    url: ${CLOUDAMQP_URL}
+#    port: ${CLOUDAMQP_PORT}
+#    listener:
+#      simple:
+#        retry:
+#          enabled: true
+#          initial-interval: ${RABBITMQ_INITIAL_INTERVAL}
+#          max-attempts: ${RABBITMQ_MAX_ATTEMPTS}
+#          max-interval: ${RABBITMQ_MAX_INTERVAL}
+#          multiplier: ${RABBITMQ_MULTIPLIER}
+  datasource:
+    hikari:
+     jdbc-url: ${DATABASE_JDBC_URL}
+     username: ${DATABASE_USERNAME}
+     password: ${DATABASE_PASSWORD}
+     auto-commit: true
+     connection-timeout: 30000
+     idle-timeout: 600000
+     max-lifetime: 1800000
+     minimum-idle: 10
+     maximum-pool-size: 30
+     connection-test-query: SELECT 1
+     leak-detection-threshold: 30000
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari: TRACE
+    org:
+      springframework:
+        jdbc:
+          core: TRACE
+      
+---
+
+spring:
+  profiles: hom
+  redis:
+    ssl: true
+    host: localhost
+    port: 6379
+    password: 
+    time-to-live: ${TTL_CACHE_SECONDS}
+    url: ${REDISCLOUD_URL}
+#  rabbitmq:
+#    url: ${CLOUDAMQP_URL}
+#    port: ${CLOUDAMQP_PORT}
+#    listener:
+#      simple:
+#        retry:
+#          enabled: true
+#          initial-interval: ${RABBITMQ_INITIAL_INTERVAL}
+#          max-attempts: ${RABBITMQ_MAX_ATTEMPTS}
+#          max-interval: ${RABBITMQ_MAX_INTERVAL}
+#          multiplier: ${RABBITMQ_MULTIPLIER}
+  datasource:
+    hikari:
+     jdbc-url: ${DATABASE_JDBC_URL}
+     username: ${DATABASE_USERNAME}
+     password: ${DATABASE_PASSWORD}
+     auto-commit: true
+     connection-timeout: 30000
+     idle-timeout: 600000
+     max-lifetime: 1800000
+     minimum-idle: 10
+     maximum-pool-size: 30
+     connection-test-query: SELECT 1
+     leak-detection-threshold: 30000
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 5MB
+      max-request-size: 5MB
+      
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari: TRACE
+    org:
+      springframework:
+        jdbc:
+          core: TRACE
+      
+---
+
+spring:
+  profiles: prod
+  redis:
+    ssl: true
+    host: localhost
+    port: 6379
+    password: 
+    time-to-live: ${TTL_CACHE_SECONDS}
+    url: ${REDISCLOUD_URL}
+#  rabbitmq:
+#    url: ${CLOUDAMQP_URL}
+#    port: ${CLOUDAMQP_PORT}
+#    listener:
+#      simple:
+#        retry:
+#          enabled: true
+#          initial-interval: ${RABBITMQ_INITIAL_INTERVAL}
+#          max-attempts: ${RABBITMQ_MAX_ATTEMPTS}
+#          max-interval: ${RABBITMQ_MAX_INTERVAL}
+#          multiplier: ${RABBITMQ_MULTIPLIER}
+  datasource:
+    hikari:
+     jdbc-url: ${DATABASE_JDBC_URL}
+     username: ${DATABASE_USERNAME}
+     password: ${DATABASE_PASSWORD}
+     auto-commit: true
+     connection-timeout: 30000
+     idle-timeout: 60000
+     max-lifetime: 180000
+     minimum-idle: 5
+     maximum-pool-size: 200
+     connection-test-query: SELECT 1
+     leak-detection-threshold: 30000
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari: TRACE
+    org:
+      springframework:
+        jdbc:
+          core: TRACE

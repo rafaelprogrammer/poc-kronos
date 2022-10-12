@@ -1,0 +1,40 @@
+$chat-editor := {
+  border: 5px
+  border-color: #3E4752
+  min-height: 42px
+  max-height: 76px
+  send-btn-w: 50px
+  send-right-option-w: 0px
+}
+chat-leave-space-editor := $chat-editor.send-btn-w + $chat-editor.send-right-option-w
+
+[contenteditable=true]:empty:before
+  content: attr(placeholder)
+  display: block
+  color: #8E9DAD
+
+.vuse-chat-message-container
+  width: 100%
+  height: 100%
+  display: block
+  float: left
+  border: 3px solid #3E4752
+  .chat-message-editor
+    display: block
+    float: left
+    padding: 10px 12px
+    width: "calc(100% - %s)" % chat-leave-space-editor
+    max-height: $chat-editor.max-height !important
+    min-height: 40px
+    overflow-y: auto
+    &:focus
+      outline: 0px solid transparent
+  .send-message-btn
+    display: block
+    float: left
+    width: $chat-editor.send-btn-w
+    min-width: $chat-editor.send-btn-w !important
+    height: 100%
+.theme--dark
+  .vuse-chat-message-container
+    border: 3px solid #000

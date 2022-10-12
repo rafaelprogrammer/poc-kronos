@@ -1,0 +1,13 @@
+{
+  "header": "Vue bar",
+  "headerText": "Vue-bar chart is elegant spark bars for vuejs.",
+  "examples": {
+    "standard": {
+      "header": "Basic",
+      "desc": "The `bars` component makes it easy to add elegant spark bars for your data information.",
+      "git": "false",
+      "gitalt": "https://github.com/DeviaVir/vue-bar",
+      "codepan": "false"
+    }
+  }
+}

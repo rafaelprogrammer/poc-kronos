@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>white_master</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#C3CFE2" offset="0%"></stop>
+            <stop stop-color="#F5F7FA" offset="100%"></stop>
+        </linearGradient>
+        <path d="M8.91,0 L27,36.18 L45.09,0 L54,0 L27,54 L0,0 L8.91,0 Z" id="path-2"></path>
+        <linearGradient x1="1.11022302e-14%" y1="100%" x2="100%" y2="0%" id="linearGradient-4">
+            <stop stop-color="#C3CFE2" offset="0%"></stop>
+            <stop stop-color="#F5F7FA" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-5" points="19.5 28.0601283 0.456654153 32.79375 14.1015515 18.7636858 19.5 0 24.8984485 18.7636858 38.5433458 32.79375"></polygon>
+        <linearGradient x1="0%" y1="1.72254642e-14%" x2="100%" y2="100%" id="linearGradient-7">
+            <stop stop-color="#C3CFE2" offset="0%"></stop>
+            <stop stop-color="#F5F7FA" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="vuse-white-txt">
+            <g id="white_master">
+                <g id="V-black">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                    <rect id="Rectangle-2" fill="url(#linearGradient-4)" mask="url(#mask-3)" x="27" y="0" width="27" height="54"></rect>
+                </g>
+                <g id="M-Black" transform="translate(8.000000, 0.000000)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <use id="Mask" fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+                    <rect id="Rectangle-3" fill="url(#linearGradient-7)" mask="url(#mask-6)" x="19.5" y="0" width="19.0031521" height="32.9287037"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

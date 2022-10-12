@@ -1,0 +1,52 @@
+{
+  "header": "Card Widget",
+  "headerText": "Card Widget",
+  "components": ["vuse-card-mini-widget", "vuse-action-card-widget", "vuse-user-profile-widget"],
+  "props": {
+    "vuse-card-mini-widget": {
+      "headline": "Set hearline text with it.",
+      "subheader": "Set hearline text with it.",
+      "avatar": "You can set avatar image here",
+      "icon": "If you don't have avatar, then it will look into icon that you set with this prop.",
+      "iconColor": "Set icon color",
+      "background": "This will set background of the widget.",
+      "size": "Size of the icon/avatar",
+      "className": "Additional classes that you want to set to the card.",
+      "dark": "Based on the background you need to set text color.",
+      "rightIcon": "To move the icon/avatar to right side and set the text in the left side",
+      "tile": "In case if avatar, set tile to have tile effect on avatar",
+      "gradient": "Choose gradient background for the card widget",
+      "height": "Set the height of the widget. Default is <code>100px</code>"
+    },
+    "vuse-action-card-widget": {
+      "cardMedia": "Source of media file for the <code>v-card-media</code>",
+      "mediaHeight": "Height of the media",
+      "mediaHeadline": "Title display over the media",
+      "actions": "Action is the array of objects (in case of multiple action). This relates to <code>v-card-action</code>. An action object may have below elements: </br> Button position: <code>{position: Boolean}</code>. Default will be icon button.</br> Show as button: <code>{btn: Boolean}</code> </br> Color of button: <code>{color: String}</code> </br> Flat button: <code>{flat: Boolean}</code> </br> Round button: <code>{round: Boolean}</code> </br> Outline button: <code>{outline: Boolean}</code> </br> Small button: <code>{outline: Boolean}</code> </br> Dark: <code>{dark: Boolean}</code> </br> Event Emitter: <code>{event: String}</code> this event will be emitted on click of the button, so it can be handled at <code>vuse-action-card-widget</code></br>",
+      "cardTitle": "Refers to <code>v-card-title</code>'s headline and detail. <code> cardTitle: {headline: ', detail: '}</code>"
+    },
+    "vuse-user-profile-widget": {
+      "avatar": "You can set avatar image here",
+      "name": "Name of the user",
+      "size": "Size of the avatar",
+      "dark": "Based on the background you need to set text color.",
+      "gradient": "Choose gradient background for the card widget",
+      "height": "Set the height of the widget. Default is <code>400px</code>",
+      "background": "This will set background of the widget.",
+      "className": "Additional classes that you want to set to the card.",
+      "avatarColor": "Color of avatar background. In case you dont have avatar, it will set background for icon.",
+      "icon": "Replacement of avatar if you have not set avatar media, you can set avatar icon.",
+      "iconColor": "Color of avatar icon.",
+      "iconSize": "Size of the avatar icon"
+    }
+  },
+  "events": {
+    "vuse-card-mini-widget": {
+      "click": "Handle the click event on the component."
+    }
+  },
+  "slots": {
+    "details": "Slot to customize details",
+    "actions": "Slot to manage to card actions"
+  }
+}

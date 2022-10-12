@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REL_REG_FOLHA_PONTO" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c171cc70-91e2-46b9-bed0-220606debfe8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Kronos"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<parameter name="ID_FUNCIONARIO" class="java.lang.Long"/>
+	<queryString language="SQL">
+		<![CDATA[select
+	p.data,
+	tp.nome as periodo,
+	case
+		when id_tipo_periodo_ponto = 1 then cp.hora_inicial_p1
+		when id_tipo_periodo_ponto = 2 then cp.hora_inicial_p2
+		when id_tipo_periodo_ponto = 3 then cp.hora_inicial_p3
+		else null end as hora_inicial_prevista,
+		case
+			when id_tipo_periodo_ponto = 1 then cp.hora_final_p1
+			when id_tipo_periodo_ponto = 2 then cp.hora_final_p2
+			when id_tipo_periodo_ponto = 3 then cp.hora_final_p3
+			else null end as hora_final_prevista,
+		p.hora_inicial_registro, p.hora_final_registro,
+		cp.carga_horaria_semanal,
+		pe.nome, pe.numero_registro, pe.cpf,tf.nome as funcao
+		from
+			ponto p
+		join tipo_periodo_ponto tp on
+			(p.id_tipo_periodo_ponto = p.id_tipo_periodo_ponto )
+		join config_ponto cp on
+			(p.id_config_ponto = cp.id)
+		join funcionario f on (cp.id_funcionario  = f.id )
+		join pessoa pe on (f.id_pessoa  = pe.id )
+		join funcionario_funcao ff on (f.id = ff.id_funcionario )
+		join tipo_funcao  tf on (ff.id_tipo_funcao = tf.id )
+		where
+			cp.id_funcionario = $P{ID_FUNCIONARIO} 
+order by p.data]]>
+	</queryString>
+	<field name="data" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="data"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponto"/>
+	</field>
+	<field name="periodo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="periodo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tipo_periodo_ponto"/>
+	</field>
+	<field name="hora_inicial_prevista" class="java.sql.Time">
+		<property name="com.jaspersoft.studio.field.label" value="hora_inicial_prevista"/>
+	</field>
+	<field name="hora_final_prevista" class="java.sql.Time">
+		<property name="com.jaspersoft.studio.field.label" value="hora_final_prevista"/>
+	</field>
+	<field name="hora_inicial_registro" class="java.sql.Time">
+		<property name="com.jaspersoft.studio.field.label" value="hora_inicial_registro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponto"/>
+	</field>
+	<field name="hora_final_registro" class="java.sql.Time">
+		<property name="com.jaspersoft.studio.field.label" value="hora_final_registro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponto"/>
+	</field>
+	<field name="carga_horaria_semanal" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="carga_horaria_semanal"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="config_ponto"/>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="numero_registro" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="numero_registro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="cpf" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cpf"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="funcao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="funcao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tipo_funcao"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="-20" y="0" width="40" height="18" uuid="d84c8ccb-d045-44ce-ac0c-9ca59b6cda1f"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[NR REG:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement key="" positionType="FixRelativeToBottom" x="20" y="0" width="100" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="227f241a-0261-49fa-9cd6-4460f8615ef0"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{numero_registro}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement key="" positionType="FixRelativeToBottom" x="160" y="0" width="100" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="37505082-372b-452a-a9eb-f08833221771"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="120" y="0" width="40" height="18" uuid="68cf37bf-d6d5-4bc8-95f2-a6d821b3b87e"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CPF:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="0" width="40" height="18" uuid="776b96b5-1518-4d4c-97f1-29df41e3bbaa"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[NOME:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement key="" positionType="FixRelativeToBottom" x="300" y="0" width="274" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="3198ef7b-ea22-4455-8bbf-baf9e1ee3e6c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-20" y="18" width="50" height="18" uuid="03202c86-b7da-4df0-b586-2230507273d7"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[FUNÇÃO:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement key="" positionType="FixRelativeToBottom" x="30" y="18" width="150" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="4f754e60-48ad-45be-9935-478e91f45ab6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{funcao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="18" width="140" height="18" uuid="0f23a13c-7718-45e9-81d1-bfc9ed5d0563"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CARGA HORÁRIA SEMANAL:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement key="" positionType="FixRelativeToBottom" x="320" y="18" width="80" height="18" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="60a0c8a0-b29b-49e7-af72-25b77ccdf640"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{carga_horaria_semanal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="-20" y="0" width="100" height="32" uuid="1ed326bf-7af0-4e63-9053-fd6a1cd4038a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="120" height="32" uuid="3f4bbbfe-24b1-4749-9159-c7bf5a9337b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Período]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="16" width="100" height="16" uuid="ce3152c3-ab9e-439b-ae93-640190dfe073"/>
+				<text><![CDATA[Hora Prevista]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="16" width="90" height="16" uuid="7b33f793-bdf6-41db-8363-77b05b8ea97c"/>
+				<text><![CDATA[Hora Registro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="16" width="90" height="16" uuid="7a330135-c00b-47e9-bec0-17b622f5af72"/>
+				<text><![CDATA[Hora Prevista]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="16" width="94" height="16" uuid="92428928-c6ca-4cf1-b97b-a4fa899ea0ed"/>
+				<text><![CDATA[Hora Registro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="190" height="16" uuid="f9d4580e-be67-4b6a-b0fe-276535b83e8f"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Entrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="0" width="184" height="16" uuid="6db0f4ee-bac6-4383-8141-33e0618b970d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Saída]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement key="" isPrintRepeatedValues="false" x="80" y="0" width="120" height="25" uuid="e19277db-5958-4645-a681-5306fe3d9150"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{periodo}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy">
+				<reportElement key="" positionType="FixRelativeToBottom" isPrintRepeatedValues="false" x="-20" y="0" width="100" height="25" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="98367a26-7569-436d-9ca2-6b4b029b2259">
+					<printWhenExpression><![CDATA[$V{COLUMN_COUNT} == 1]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm" isBlankWhenNull="true">
+				<reportElement key="" x="200" y="0" width="100" height="25" uuid="f5b7c703-a658-493e-ac8d-a1882167ff37"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{hora_inicial_prevista}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm" isBlankWhenNull="true">
+				<reportElement key="" x="300" y="0" width="90" height="25" uuid="1afbeb5c-22a3-4c27-939a-2f0e3079f339"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{hora_inicial_registro}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm" isBlankWhenNull="true">
+				<reportElement key="" x="390" y="0" width="90" height="25" uuid="504d1971-b936-443f-80f0-d6274bb8ad07"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{hora_final_prevista}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm" isBlankWhenNull="true">
+				<reportElement key="" x="480" y="0" width="94" height="25" uuid="01d7ece1-4aec-4ed0-8d5f-75d589ea7ea1"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{hora_final_registro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

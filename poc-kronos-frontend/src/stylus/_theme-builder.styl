@@ -1,0 +1,401 @@
+.theme-settings-container
+  width: 258px
+  min-width: 258px
+  max-width: 258px
+  .v-card
+    // padding: 3px 0  0 3px
+    max-height: 40px !important
+    max-width: 40px !important
+    min-width: 40px !important
+    cursor: pointer
+    font-size: 12px
+    line-height: 60px
+
+colors = {
+  sidebar-500: { bg: $theme.sidebar, clr: #FFF },
+  active-500: { bg: #00c486, clr: #FFF },
+  red-50: { bg: $red.lighten-5, clr: #000 },
+  red-100: { bg: $red.lighten-4, clr: #000 },
+  red-200: { bg: $red.lighten-3, clr: #000 },
+  red-300: { bg: $red.lighten-2, clr: #000 },
+  red-400: { bg: $red.lighten-1, clr: #000 },
+  red-500: { bg: $red.base, clr: #FFF },
+  red-600: { bg: $red.darken-1, clr: #FFF },
+  red-700: { bg: $red.darken-2, clr: #FFF },
+  red-800: { bg: $red.darken-3, clr: #FFF },
+  red-900: { bg: $red.darken-4, clr: #FFF },
+  red-a100: { bg: $red.accent-1, clr: #000 },
+  red-a200: { bg: $red.accent-2, clr: #FFF },
+  red-a400: { bg: $red.accent-3, clr: #FFF },
+  red-a700: { bg: $red.accent-4, clr: #FFF },
+  pink-50: { bg: $pink.lighten-5, clr: #000 },
+  pink-100: { bg: $pink.lighten-4, clr: #000 },
+  pink-200: { bg: $pink.lighten-3, clr: #000 },
+  pink-300: { bg: $pink.lighten-2, clr: #000 },
+  pink-400: { bg: $pink.lighten-1, clr: #000 },
+  pink-500: { bg: $pink.base, clr: #FFF },
+  pink-600: { bg: $pink.darken-1, clr: #FFF },
+  pink-700: { bg: $pink.darken-2, clr: #FFF },
+  pink-800: { bg: $pink.darken-3, clr: #FFF },
+  pink-900: { bg: $pink.darken-4, clr: #FFF },
+  pink-a100: { bg: $pink.accent-1, clr: #000 },
+  pink-a200: { bg: $pink.accent-2, clr: #FFF },
+  pink-a400: { bg: $pink.accent-3, clr: #FFF },
+  pink-a700: { bg: $pink.accent-4, clr: #FFF },
+  purple-50: { bg: $purple.lighten-5, clr: #000 },
+  purple-100: { bg: $purple.lighten-4, clr: #000 },
+  purple-200: { bg: $purple.lighten-3, clr: #000 },
+  purple-300: { bg: $purple.lighten-2, clr: #FFF },
+  purple-400: { bg: $purple.lighten-1, clr: #FFF },
+  purple-500: { bg: $purple.base, clr: #FFF },
+  purple-600: { bg: $purple.darken-1, clr: #FFF },
+  purple-700: { bg: $purple.darken-2, clr: #FFF },
+  purple-800: { bg: $purple.darken-3, clr: #FFF },
+  purple-900: { bg: $purple.darken-4, clr: #FFF },
+  purple-a100: { bg: $purple.accent-1, clr: #000 },
+  purple-a200: { bg: $purple.accent-2, clr: #FFF },
+  purple-a400: { bg: $purple.accent-3, clr: #FFF },
+  purple-a700: { bg: $purple.accent-4, clr: #FFF },
+  deep-purple-50: { bg: $deep-purple.lighten-5, clr: #000 },
+  deep-purple-100: { bg: $deep-purple.lighten-4, clr: #000 },
+  deep-purple-200: { bg: $deep-purple.lighten-3, clr: #000 },
+  deep-purple-300: { bg: $deep-purple.lighten-2, clr: #FFF },
+  deep-purple-400: { bg: $deep-purple.lighten-1, clr: #FFF },
+  deep-purple-500: { bg: $deep-purple.base, clr: #FFF },
+  deep-purple-600: { bg: $deep-purple.darken-1, clr: #FFF },
+  deep-purple-700: { bg: $deep-purple.darken-2, clr: #FFF },
+  deep-purple-800: { bg: $deep-purple.darken-3, clr: #FFF },
+  deep-purple-900: { bg: $deep-purple.darken-4, clr: #FFF },
+  deep-purple-a100: { bg: $deep-purple.accent-1, clr: #000 },
+  deep-purple-a200: { bg: $deep-purple.accent-2, clr: #FFF },
+  deep-purple-a400: { bg: $deep-purple.accent-3, clr: #FFF },
+  deep-purple-a700: { bg: $deep-purple.accent-4, clr: #FFF },
+  indigo-50: { bg: $indigo.lighten-5, clr: #000 },
+  indigo-100: { bg: $indigo.lighten-4, clr: #000 },
+  indigo-200: { bg: $indigo.lighten-3, clr: #000 },
+  indigo-300: { bg: $indigo.lighten-2, clr: #FFF },
+  indigo-400: { bg: $indigo.lighten-1, clr: #FFF },
+  indigo-500: { bg: $indigo.base, clr: #FFF },
+  indigo-600: { bg: $indigo.darken-1, clr: #FFF },
+  indigo-700: { bg: $indigo.darken-2, clr: #FFF },
+  indigo-800: { bg: $indigo.darken-3, clr: #FFF },
+  indigo-900: { bg: $indigo.darken-4, clr: #FFF },
+  indigo-a100: { bg: $indigo.accent-1, clr: #000 },
+  indigo-a200: { bg: $indigo.accent-2, clr: #FFF },
+  indigo-a400: { bg: $indigo.accent-3, clr: #FFF },
+  indigo-a700: { bg: $indigo.accent-4, clr: #FFF },
+  blue-50: { bg: $blue.lighten-5, clr: #000 },
+  blue-100: { bg: $blue.lighten-4, clr: #000 },
+  blue-200: { bg: $blue.lighten-3, clr: #000 },
+  blue-300: { bg: $blue.lighten-2, clr: #000 },
+  blue-400: { bg: $blue.lighten-1, clr: #000 },
+  blue-500: { bg: $blue.base, clr: #FFF },
+  blue-600: { bg: $blue.darken-1, clr: #FFF },
+  blue-700: { bg: $blue.darken-2, clr: #FFF },
+  blue-800: { bg: $blue.darken-3, clr: #FFF },
+  blue-900: { bg: $blue.darken-4, clr: #FFF },
+  blue-a100: { bg: $blue.accent-1, clr: #000 },
+  blue-a200: { bg: $blue.accent-2, clr: #FFF },
+  blue-a400: { bg: $blue.accent-3, clr: #FFF },
+  blue-a700: { bg: $blue.accent-4, clr: #FFF },
+  light-blue-50: { bg: $light-blue.lighten-5, clr: #000 },
+  light-blue-100: { bg: $light-blue.lighten-4, clr: #000 },
+  light-blue-200: { bg: $light-blue.lighten-3, clr: #000 },
+  light-blue-300: { bg: $light-blue.lighten-2, clr: #000 },
+  light-blue-400: { bg: $light-blue.lighten-1, clr: #000 },
+  light-blue-500: { bg: $light-blue.base, clr: #FFF },
+  light-blue-600: { bg: $light-blue.darken-1, clr: #FFF },
+  light-blue-700: { bg: $light-blue.darken-2, clr: #FFF },
+  light-blue-800: { bg: $light-blue.darken-3, clr: #FFF },
+  light-blue-900: { bg: $light-blue.darken-4, clr: #FFF },
+  light-blue-a100: { bg: $light-blue.accent-1, clr: #000 },
+  light-blue-a200: { bg: $light-blue.accent-2, clr: #000 },
+  light-blue-a400: { bg: $light-blue.accent-3, clr: #000 },
+  light-blue-a700: { bg: $light-blue.accent-4, clr: #FFF },
+  cyan-50: { bg: $cyan.lighten-5, clr: #000 },
+  cyan-100: { bg: $cyan.lighten-4, clr: #000 },
+  cyan-200: { bg: $cyan.lighten-3, clr: #000 },
+  cyan-300: { bg: $cyan.lighten-2, clr: #000 },
+  cyan-400: { bg: $cyan.lighten-1, clr: #000 },
+  cyan-500: { bg: $cyan.base, clr: #FFF },
+  cyan-600: { bg: $cyan.darken-1, clr: #FFF },
+  cyan-700: { bg: $cyan.darken-2, clr: #FFF },
+  cyan-800: { bg: $cyan.darken-3, clr: #FFF },
+  cyan-900: { bg: $cyan.darken-4, clr: #FFF },
+  cyan-a100: { bg: $cyan.accent-1, clr: #000 },
+  cyan-a200: { bg: $cyan.accent-2, clr: #000 },
+  cyan-a400: { bg: $cyan.accent-3, clr: #000 },
+  cyan-a700: { bg: $cyan.accent-4, clr: #000 },
+  teal-50: { bg: $teal.lighten-5, clr: #000 },
+  teal-100: { bg: $teal.lighten-4, clr: #000 },
+  teal-200: { bg: $teal.lighten-3, clr: #000 },
+  teal-300: { bg: $teal.lighten-2, clr: #000 },
+  teal-400: { bg: $teal.lighten-1, clr: #000 },
+  teal-500: { bg: $teal.base, clr: #FFF },
+  teal-600: { bg: $teal.darken-1, clr: #FFF },
+  teal-700: { bg: $teal.darken-2, clr: #FFF },
+  teal-800: { bg: $teal.darken-3, clr: #FFF },
+  teal-900: { bg: $teal.darken-4, clr: #FFF },
+  teal-a100: { bg: $teal.accent-1, clr: #000 },
+  teal-a200: { bg: $teal.accent-2, clr: #000 },
+  teal-a400: { bg: $teal.accent-3, clr: #000 },
+  teal-a700: { bg: $teal.accent-4, clr: #000 },
+  green-50: { bg: $green.lighten-5, clr: #000 },
+  green-100: { bg: $green.lighten-4, clr: #000 },
+  green-200: { bg: $green.lighten-3, clr: #000 },
+  green-300: { bg: $green.lighten-2, clr: #000 },
+  green-400: { bg: $green.lighten-1, clr: #000 },
+  green-500: { bg: $green.base, clr: #FFF },
+  green-600: { bg: $green.darken-1, clr: #FFF },
+  green-700: { bg: $green.darken-2, clr: #FFF },
+  green-800: { bg: $green.darken-3, clr: #FFF },
+  green-900: { bg: $green.darken-4, clr: #FFF },
+  green-a100: { bg: $green.accent-1, clr: #000 },
+  green-a200: { bg: $green.accent-2, clr: #000 },
+  green-a400: { bg: $green.accent-3, clr: #000 },
+  green-a700: { bg: $green.accent-4, clr: #000 },
+  light-green-50: { bg: $light-green.lighten-5, clr: #000 },
+  light-green-100: { bg: $light-green.lighten-4, clr: #000 },
+  light-green-200: { bg: $light-green.lighten-3, clr: #000 },
+  light-green-300: { bg: $light-green.lighten-2, clr: #000 },
+  light-green-400: { bg: $light-green.lighten-1, clr: #000 },
+  light-green-500: { bg: $light-green.base, clr: #000 },
+  light-green-600: { bg: $light-green.darken-1, clr: #000 },
+  light-green-700: { bg: $light-green.darken-2, clr: #FFF },
+  light-green-800: { bg: $light-green.darken-3, clr: #FFF },
+  light-green-900: { bg: $light-green.darken-4, clr: #FFF },
+  light-green-a100: { bg: $light-green.accent-1, clr: #000 },
+  light-green-a200: { bg: $light-green.accent-2, clr: #000 },
+  light-green-a400: { bg: $light-green.accent-3, clr: #000 },
+  light-green-a700: { bg: $light-green.accent-4, clr: #000 },
+  lime-50: { bg: $lime.lighten-5, clr: #000 },
+  lime-100: { bg: $lime.lighten-4, clr: #000 },
+  lime-200: { bg: $lime.lighten-3, clr: #000 },
+  lime-300: { bg: $lime.lighten-2, clr: #000 },
+  lime-400: { bg: $lime.lighten-1, clr: #000 },
+  lime-500: { bg: $lime.base, clr: #000 },
+  lime-600: { bg: $lime.darken-1, clr: #000 },
+  lime-700: { bg: $lime.darken-2, clr: #000 },
+  lime-800: { bg: $lime.darken-3, clr: #000 },
+  lime-900: { bg: $lime.darken-4, clr: #FFF },
+  lime-a100: { bg: $lime.accent-1, clr: #000 },
+  lime-a200: { bg: $lime.accent-2, clr: #000 },
+  lime-a400: { bg: $lime.accent-3, clr: #000 },
+  lime-a700: { bg: $lime.accent-4, clr: #000 },
+  yellow-50: { bg: $yellow.lighten-5, clr: #000 },
+  yellow-100: { bg: $yellow.lighten-4, clr: #000 },
+  yellow-200: { bg: $yellow.lighten-3, clr: #000 },
+  yellow-300: { bg: $yellow.lighten-2, clr: #000 },
+  yellow-400: { bg: $yellow.lighten-1, clr: #000 },
+  yellow-500: { bg: $yellow.base, clr: #000 },
+  yellow-600: { bg: $yellow.darken-1, clr: #000 },
+  yellow-700: { bg: $yellow.darken-2, clr: #000 },
+  yellow-800: { bg: $yellow.darken-3, clr: #000 },
+  yellow-900: { bg: $yellow.darken-4, clr: #000 },
+  yellow-a100: { bg: $yellow.accent-1, clr: #000 },
+  yellow-a200: { bg: $yellow.accent-2, clr: #000 },
+  yellow-a400: { bg: $yellow.accent-3, clr: #000 },
+  yellow-a700: { bg: $yellow.accent-4, clr: #000 },
+  amber-50: { bg: $amber.lighten-5, clr: #000 },
+  amber-100: { bg: $amber.lighten-4, clr: #000 },
+  amber-200: { bg: $amber.lighten-3, clr: #000 },
+  amber-300: { bg: $amber.lighten-2, clr: #000 },
+  amber-400: { bg: $amber.lighten-1, clr: #000 },
+  amber-500: { bg: $amber.base, clr: #000 },
+  amber-600: { bg: $amber.darken-1, clr: #000 },
+  amber-700: { bg: $amber.darken-2, clr: #000 },
+  amber-800: { bg: $amber.darken-3, clr: #000 },
+  amber-900: { bg: $amber.darken-4, clr: #000 },
+  amber-a100: { bg: $amber.accent-1, clr: #000 },
+  amber-a200: { bg: $amber.accent-2, clr: #000 },
+  amber-a400: { bg: $amber.accent-3, clr: #000 },
+  amber-a700: { bg: $amber.accent-4, clr: #000 },
+  orange-50: { bg: $orange.lighten-5, clr: #000 },
+  orange-100: { bg: $orange.lighten-4, clr: #000 },
+  orange-200: { bg: $orange.lighten-3, clr: #000 },
+  orange-300: { bg: $orange.lighten-2, clr: #000 },
+  orange-400: { bg: $orange.lighten-1, clr: #000 },
+  orange-500: { bg: $orange.base, clr: #000 },
+  orange-600: { bg: $orange.darken-1, clr: #000 },
+  orange-700: { bg: $orange.darken-2, clr: #000 },
+  orange-800: { bg: $orange.darken-3, clr: #FFF },
+  orange-900: { bg: $orange.darken-4, clr: #FFF },
+  orange-a100: { bg: $orange.accent-1, clr: #000 },
+  orange-a200: { bg: $orange.accent-2, clr: #000 },
+  orange-a400: { bg: $orange.accent-3, clr: #000 },
+  orange-a700: { bg: $orange.accent-4, clr: #000 },
+  deep-orange-50: { bg: $deep-orange.lighten-5, clr: #000 },
+  deep-orange-100: { bg: $deep-orange.lighten-4, clr: #000 },
+  deep-orange-200: { bg: $deep-orange.lighten-3, clr: #000 },
+  deep-orange-300: { bg: $deep-orange.lighten-2, clr: #000 },
+  deep-orange-400: { bg: $deep-orange.lighten-1, clr: #000 },
+  deep-orange-500: { bg: $deep-orange.base, clr: #000 },
+  deep-orange-600: { bg: $deep-orange.darken-1, clr: #FFF },
+  deep-orange-700: { bg: $deep-orange.darken-2, clr: #FFF },
+  deep-orange-800: { bg: $deep-orange.darken-3, clr: #FFF },
+  deep-orange-900: { bg: $deep-orange.darken-4, clr: #FFF },
+  deep-orange-a100: { bg: $deep-orange.accent-1, clr: #000 },
+  deep-orange-a200: { bg: $deep-orange.accent-2, clr: #000 },
+  deep-orange-a400: { bg: $deep-orange.accent-3, clr: #FFF },
+  deep-orange-a700: { bg: $deep-orange.accent-4, clr: #FFF },
+  brown-50: { bg: $brown.lighten-5, clr: #000 },
+  brown-100: { bg: $brown.lighten-4, clr: #000 },
+  brown-200: { bg: $brown.lighten-3, clr: #000 },
+  brown-300: { bg: $brown.lighten-2, clr: #FFF },
+  brown-400: { bg: $brown.lighten-1, clr: #FFF },
+  brown-500: { bg: $brown.base, clr: #FFF },
+  brown-600: { bg: $brown.darken-1, clr: #FFF },
+  brown-700: { bg: $brown.darken-2, clr: #FFF },
+  brown-800: { bg: $brown.darken-3, clr: #FFF },
+  brown-900: { bg: $brown.darken-4, clr: #FFF },
+  grey-50: { bg: $grey.lighten-5, clr: #000 },
+  grey-100: { bg: $grey.lighten-4, clr: #000 },
+  grey-200: { bg: $grey.lighten-3, clr: #000 },
+  grey-300: { bg: $grey.lighten-2, clr: #000 },
+  grey-400: { bg: $grey.lighten-1, clr: #000 },
+  grey-500: { bg: $grey.base, clr: #000 },
+  grey-600: { bg: $grey.darken-1, clr: #FFF },
+  grey-700: { bg: $grey.darken-2, clr: #FFF },
+  grey-800: { bg: $grey.darken-3, clr: #FFF },
+  grey-900: { bg: $grey.darken-4, clr: #FFF },
+  blue-grey-50: { bg: $blue-grey.lighten-5, clr: #000 },
+  blue-grey-100: { bg: $blue-grey.lighten-4, clr: #000 },
+  blue-grey-200: { bg: $blue-grey.lighten-3, clr: #000 },
+  blue-grey-300: { bg: $blue-grey.lighten-2, clr: #000 },
+  blue-grey-400: { bg: $blue-grey.lighten-1, clr: #FFF },
+  blue-grey-500: { bg: $blue-grey.base, clr: #FFF },
+  blue-grey-600: { bg: $blue-grey.darken-1, clr: #FFF },
+  blue-grey-700: { bg: $blue-grey.darken-2, clr: #FFF },
+  blue-grey-800: { bg: $blue-grey.darken-3, clr: #FFF },
+  blue-grey-900: { bg: $blue-grey.darken-4, clr: #FFF },
+  white-500: { bg: #FFF, clr: #000 },
+  black-500: { bg: #000, clr: #FFF }
+}
+for name, color in colors
+  .md-{name}-border
+    border-color: color.clr !important
+  .md-{name}--text
+    color: color.bg !important
+  .md-{name}
+    vuse-themebuilder(color.bg, color.clr)
+    &.v-btn, button, a
+      i
+        color: color.clr !important
+    &.v-avatar
+      i
+        color: color.clr !important
+    &.vuse-sidebar
+      .v-toolbar
+        .v-list .v-list__tile
+          color: color.clr !important
+      .v-toolbar__content ul, .nav-drawer
+        vuse-themebuilder(color.bg, color.clr)
+        // *:not(.heading-text)
+        //   color: color.clr !important
+        .v-list__group__header__append-icon, .v-list__group__header__prepend-icon
+          color: color.clr !important
+        .heading-text
+          color: rgba(color.clr, 0.40) !important
+        .v-list__group:not(.v-list__group--active)
+          *
+            color: color.clr !important
+        // .v-list__group
+        //   .theme--light.v-icon, .theme--dark.v-icon
+        //     color: color.clr !important
+      &:not(.alpha)
+        .v-toolbar .v-list__tile
+          vuse-themebuilder(color.bg, color.clr)
+      &.alpha
+        // .v-list__tile__title
+        //   color: color.clr !important
+      .v-list__group--active, .v-list__tile--active
+        vuse-tb-listgroup(color.bg, color.clr)
+        .v-list__tile--active
+          background: transparent
+          background-color: transparent
+          color: color.clr
+      &.alpha
+        .nav-drawer, .v-toolbar__content ul
+          z-index: 4
+          position: relative
+          background: transparent !important
+          background-color: transparent !important
+        &:before, &:after
+          display: block
+          content: ""
+          position: absolute
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          z-index: 0
+          background: #000
+        .sidebar-background
+          position: absolute
+          z-index: 1
+          height: 100%
+          width: 100%
+          display: block
+          top: 0
+          left: 0
+          background-size: cover
+          background-position: center center
+          &:after
+            position: absolute
+            z-index: 2
+            width: 100%
+            height: 100%
+            content: ""
+            display: block
+            background: rgba(color.bg, 0.75)
+            opacity: 1
+  .md-{name}-scheme
+    .vuse-sidebar
+      .v-list__group__header
+        .v-list__group__header__append-icon
+          .v-icon
+            color: color.clr
+      .v-list__tile--active
+        vuse-themebuilder(color.bg, color.clr)
+        .v-list__tile__action i
+          color: color.clr !important
+      .nav-drawer
+        .v-list__group .v-list__group__items .v-list__tile--active
+          .v-list__tile__action i
+            color: color.clr !important
+        .list__tile-solo
+          .v-list__tile--active i
+            color: color.clr !important
+        .v-list__group__header--active
+          .list__tile-inner-group
+            .v-list__tile__action i
+              color: color.clr
+      // &.v-navigation-drawer--mini-variant
+      //   .v-list__group--active
+      //     vuse-themebuilder(color.bg, color.clr)
+
+      &.google-material-effect
+        .v-list__tile--active
+          vuse-gmd-themebuilder(color.bg, color.clr)
+          .v-list__tile__action i
+            color: color.clr !important
+        .nav-drawer .v-list__group .v-list__group__items .v-list__tile--active
+          .v-list__tile__action i
+            color: color.bg !important
+        .nav-drawer .list__tile-solo
+          .v-list__tile--active i
+            color: color.bg !important
+    .box-glow
+      background-color: color.bg !important
+      box-shadow: 0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(color.bg, .6)
+      color: color.clr
+    .text-glow
+      text-shadow: 1px 2px 4px rgba(color.bg, .6)
+      color: color.clr
+    &.v-btn
+      vuse-themebuilder(color.bg, color.clr)
+  .box-{name}-glow
+    background-color: color.bg !important
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,.2), 0 13px 24px -11px rgba(color.bg, .6)
+  .text-{name}-glow
+    text-shadow: 1px 2px 4px rgba(color.bg, .6)

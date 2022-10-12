@@ -1,0 +1,43 @@
+.contactapp-nav-spacer
+  @extend .elevation-0
+  top: 150px !important
+  height: calc(100% - 155px) !important
+  padding-bottom: 55px
+  &:not(.v-navigation-drawer--is-mobile)
+    .contact-options
+      width: 280px
+      float: right
+    .contact-options-flex
+      margin-top: 25px
+      border: 2px solid #E0E7EF
+.create-dialog-card
+  .v-card__title
+    z-index: 1
+    width: 100%
+    position: absolute
+    font-size: 18px
+
+.contact-nav-drawer
+  margin: 0 !important
+  padding: 0 !important
+  display: block
+  float left
+  height: calc(100vh - 214px) !important
+.contact-section
+  width: calc(100% - 300px)
+  margin: 0 !important
+  padding: 0 !important
+  display: block
+  float left
+  .contact-list-section
+    height: calc(100vh - 280px)
+    overflow-y: auto
+@media (max-width: 959px)
+  .contact-nav-drawer.v-navigation-drawer--close
+    width: 0px !important
+    + .contact-section
+      width: 100%
+  .contact-nav-drawer.v-navigation-drawer--open
+    overflow-y: auto
+    + .contact-section
+      width: calc(100% - 80px)

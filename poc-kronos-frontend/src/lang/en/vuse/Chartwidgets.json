@@ -1,0 +1,35 @@
+{
+  "header": "Chart Widget",
+  "headerText": "Chart Widget",
+  "components": ["mini-chart", "box-chart"],
+  "props": {
+    "mini-chart": {
+      "type": "It can be <code>line-chart</code>  or <code>bar-chart</code>",
+      "title": "Title of the card",
+      "sub-title": "Subtitle text, that will be apprear in the end of line two.",
+      "pre-subtitle": "Bofore the <code>sub-title</code> text",
+      "icon": "Icon to set as part of sub-title.",
+      "icon-color": "Set icon color",
+      "subtitle-large": "Subtitle large text, that will be visible in the beginning of line two",
+      "data": "This must be <code>object</code> as per ChartJs data input.",
+      "option": "This must be <code>object</code> as per ChartJs option input.",
+      "gradient": "<code>Boolean</code> type of input to instruct that this chart has gradient. Make sure that <code>data</code> prop does not have background as paramater.",
+      "gradientSet": "<code>Array</code> of gradients. Can use hex color, rgb, rgba with conbination of string/object as illustrated. </br><code>:gradientSet=\"[{stop: 0, color: 'rgb(255, 248, 0)'}, 'rgba(255, 19, 97, 0.7)', '#424242']\"</code>",
+      "linearStroke": "This is array of numbers that will be converted arguments for <code>createLinearGradient</code>. See more, <a href='https://www.w3schools.com/TagS/canvas_createlineargradient.asp' target='_blank'>createLinearGradient</a>",
+      "height": "Set the height of the widget. Default is <code>100</code>"
+    },
+    "box-chart": {
+      "type": "It can be <code>line-chart</code>  or <code>bar-chart</code>",
+      "title": "Title of the card",
+      "sub-title": "Subtitle",
+      "icon": "Icon to set as part of sub-title.",
+      "icon-color": "Set icon color",
+      "data": "This must be <code>object</code> as per ChartJs data input.",
+      "option": "This must be <code>object</code> as per ChartJs option input.",
+      "gradient": "<code>Boolean</code> type of input to instruct that this chart has gradient. Make sure that <code>data</code> prop does not have background as paramater.",
+      "gradientSet": "<code>Array</code> of gradients. Can use hex color, rgb, rgba with conbination of string/object as illustrated. </br><code>:gradientSet=\"[{stop: 0, color: 'rgb(255, 248, 0)'}, 'rgba(255, 19, 97, 0.7)', '#424242']\"</code>",
+      "linearStroke": "This is array of numbers that will be converted arguments for <code>createLinearGradient</code>. See more, <a href='https://www.w3schools.com/TagS/canvas_createlineargradient.asp' target='_blank'>createLinearGradient</a>",
+      "height": "Set the height of the widget. Default is <code>100</code>"
+    }
+  }
+}

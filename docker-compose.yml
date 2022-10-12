@@ -1,0 +1,33 @@
+version: "2"
+
+services:
+  redis:
+    image: redis
+    command: redis-server --requirepass Redis2019!
+    ports:
+      - "6379:6379"
+#  fila-mensagens:
+#    image: "rabbitmq:3.7-management"
+#    # hostname fixo para que pasta de dados do rabbit não mude a cada execução
+#    hostname: localhost
+#    ports:
+#      - "15672:15672"
+#      - "5672:5672"
+#    environment:
+#      RABBITMQ_DEFAULT_USER: kronos
+#      RABBITMQ_DEFAULT_PASS: kronos
+#      RABBITMQ_DEFAULT_VHOST: vhost_kronos
+#    labels:
+#      br.com.kronos.backend: "KRONOS"
+  postgressql:
+    image: postgres:9.6
+    container_name: "postgres"
+    environment:
+      - POSTGRES_DB=kronos
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - TZ=GMT
+    volumes:
+      - "./dados/postgres:/var/lib/postgresql/dados"
+    ports:
+      - 5432:5432

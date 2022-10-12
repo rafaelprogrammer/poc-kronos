@@ -1,0 +1,112 @@
+.vuse-sidebar
+  overflow: hidden
+  .v-toolbar
+    background-color: transparent !important
+    .v-list__tile
+      background-color: transparent !important
+  .nav-drawer
+    overflow-y: auto
+    height calc(100% - 40px)
+  .v-toolbar__content ul, .nav-drawer
+    li a
+      height:45px !important
+      font-size: 14px
+  &.google-material
+    .nav-drawer
+      .v-list__group__header--active .v-list__tile:after, .v-list__group__header + .v-list__group:after
+        opacity: 0
+      .v-list__group--active:before, .v-list__group--active:before, .v-list__group--active:after, .v-list__group--active:after
+        background: none !important
+      .heading-text
+        text-transform: uppercase !important
+        font-weight: bold
+      .v-list__tile--link:not(.v-list__tile--active):hover, .v-list__group__header:not(.v-list__group__header--active):hover
+        background: $sidebar.onhover
+        background-color: $sidebar.onhover
+      .v-list__group
+        &.v-list__group--active
+          background-color: transparent
+          .v-list__group__header
+            background: $sidebar.groupActive
+            background-color: $sidebar.groupActive
+        .v-list__group__header
+          margin 10px 10px 0 10px
+          padding: 5px 10px
+          border-radius(3px)
+          .v-list__group__header__prepend-icon, .v-list__group__header__append-icon
+            padding 0
+            min-width 0
+          .v-list__tile
+            height 30px
+        .v-list__group__items
+          .v-list__tile
+            margin 5px 10px 0px 10px
+            padding: 8px 10px
+            height 40px
+            border-radius(3px)
+            .v-list__tile__action
+              padding 0
+              min-width 38px
+            &:first-child
+              margin-top 10px
+            // &:not(.v-list__tile--active)
+            //   background: none !important
+
+            // &.v-list__tile--active
+            //   // THEME GENERATOR NEED TO HANDLE THIS
+            //   background: blue
+          .v-list__group
+            &.v-list__group--active
+              background-color: transparent
+              .v-list__group__header
+                background: $sidebar.groupActive
+                background-color: $sidebar.groupActive
+            &:not(.v-list__group--active)
+              .v-list__group__header
+                background: transparent !important
+                background-color: transparent !important
+            .v-list__group__header
+              margin 5px 10px 0 10px
+              padding: 5px 10px
+              // padding: 8px 10px 8px 7px
+              border-radius(3px)
+              // border-left: 3px solid red
+              // border-bottom-left-radius: 0
+              // border-top-left-radius: 0
+              .v-list__group__header__prepend-icon, .v-list__group__header__append-icon
+                padding 0
+                min-width 0
+              .v-list__group__header__prepend-icon
+                position absolute
+                right 12px
+              .v-list__tile
+                height 30px
+            .list__tile-inner-group
+              .v-list__tile
+                padding 0
+                margin 0
+                .v-list__tile__content
+                  padding-right: 24px
+            .v-list__group__items
+              .v-list__tile
+                margin 5px 10px 0px 10px
+                padding: 8px 10px
+                height 40px
+                border-radius(3px)
+                .v-list__tile__action
+                  padding 0
+                  min-width 38px
+                &:first-child
+                  margin-top 10px
+      // Solo Route
+      .list__tile-solo
+        .v-list__tile
+          margin 10px 10px 0 10px
+          padding: 8px 10px
+          height 40px
+          border-radius(3px)
+          .v-list__tile__action
+            padding 0
+            min-width 38px
+          .v-list__tile__content
+            padding 0 // Pre-set 13

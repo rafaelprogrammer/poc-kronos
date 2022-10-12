@@ -1,0 +1,39 @@
+.application--light .v-btn, .theme--light .v-btn, .theme--dark .v-btn
+  // font-size 18px
+  // @extend .elevation-0
+  text-transform: capitalize
+  for fontsize in 10 12 13 14 15 16 18 20 22 24 35 40 45
+    &.an-{fontsize}
+      font-size fontsize px !important
+      &.v-btn--disabled:not(.v-btn--icon):not(.v-btn--flat)
+        font-size fontsize px !important
+  &.v-btn--disabled:not(.v-btn--icon):not(.v-btn--flat)
+    font-size 18px
+    text-transform: capitalize
+    color: $button-diabled-text-color !important
+    background-color: $button-diabled-background-color !important
+  &.content-ma-0
+    .v-btn__content
+      margin: 0 !important
+.btn--xlarge
+  height: 50px
+  min-width: 230px
+.btn-round-48
+  height: 48px
+  width: 48px
+.btn--xlarge-auto
+  height: 50px
+
+.btn-round-36
+  height: 36px !important
+  width: 36px !important
+
+.btn-round-xs
+  height: 25px !important
+  width: 25px !important
+  font-size 14px !important
+
+.fx-close-model-btn
+  z-index: 1
+  right: -15px
+  top: -8px

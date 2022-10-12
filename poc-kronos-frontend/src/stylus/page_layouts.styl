@@ -1,0 +1,66 @@
+$inner-main-pl := 260px
+.page-layout-content
+  + main
+    margin-top: 64px !important
+    padding-top: 0 !important
+
+.cardlayout-nav-spacer-toolbar:not(.v-navigation-drawer--is-mobile)
+  + div.page-cardlayout-container
+    .inner-content
+      padding-left $inner-main-pl !important
+
+.right-sb-layout
+  .v-content
+    padding: 0 300px 0 0 !important
+
+@media (max-width: $grid-breakpoints.lg)
+  .right-sb-layout
+    .v-content
+      padding: 0 !important
+.page-cardlayout-container
+  margin-top: -88px
+  main
+    padding-top: 0 !important
+
+.full-page-cardlayout-container
+  margin-top: -88px
+  main
+    padding: 0 !important
+
+.cardlayout-nav-spacer
+  @extend .elevation-1
+  top: 150px !important
+  height: calc(100% - 155px) !important
+  padding-bottom: 55px
+
+.cardlayout-nav-spacer.v-toolbar
+  @extend .elevation-1
+  top: 150px !important
+  height: calc(100% - 187px) !important
+  padding-bottom: 55px
+
+.cardlayout-nav-sticky
+  @extend .elevation-1
+  top: 86px !important
+  height: calc(100% - 142px) !important
+  padding-bottom: 55px
+
+.page-vimg
+  height: 100vh
+  .card-center-box
+    overflow: auto
+    height: auto
+    width: 60%
+    min-width: 360px
+  .auth-box
+    width: 320px
+    overflow-y: auto
+@media (max-width: 320px)
+  .page-vimg
+    &.with-header
+      height: 100% !important
+  .card-center-box, .auth-box
+    width: 95% !important
+    margin 64px auto !important
+    min-width: unset !important
+

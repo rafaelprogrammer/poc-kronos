@@ -1,0 +1,22 @@
+{
+  "Default-light": {
+    "dark": false,
+    "scheme": "md-deep-purple-a700-scheme",
+    "primary": "deepPurple.base"
+  },
+  "Yellow-light": {
+    "dark": false,
+    "scheme": "md-yellow-500-scheme",
+    "primary": "yellow.accent4"
+  },
+  "Blue-Grey-dark": {
+    "dark": true,
+    "scheme": "md-blue-grey-500-scheme",
+    "primary": "blue-grey.accent4"
+  },
+  "Pink-dark": {
+    "dark": true,
+    "scheme": "md-pink-500-scheme",
+    "primary": "pink.accent4"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "header": "VueTrend",
+  "headerText": "VueTrend chart is elegant spark lines for vuejs.",
+  "components": ["trend"],
+  "examples": {
+    "standard": {
+      "header": "Basic",
+      "desc": "The `trend` component makes it easy to add elegant spark lines for your data information.",
+      "git": "false",
+      "gitalt": "https://github.com/QingWei-Li/vue-trend",
+      "codepan": "false"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+for classname, color in $theme
+  .{classname}
+    background: color
+    background-color: color !important
+  .{classname}--text
+    color: color !important
+
+$board-border-size =  14px
+for classname, color in $board-labels
+  .{classname}
+    background: color
+    background-color: color !important
+  .{classname}--text
+    color: color !important
+  .{classname}-label
+    border-left: $board-border-size solid color
