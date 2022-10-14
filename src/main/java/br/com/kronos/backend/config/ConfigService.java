@@ -142,9 +142,6 @@ import br.com.kronos.backend.aplicacao.disciplina.api.DisciplinaObjetivoServico;
 import br.com.kronos.backend.aplicacao.disciplina.api.DisciplinaObjetivoServicoImpl;
 import br.com.kronos.backend.aplicacao.disciplina.api.DisciplinaServico;
 import br.com.kronos.backend.aplicacao.disciplina.api.DisciplinaServicoImpl;
-import br.com.kronos.backend.aplicacao.empresa.EmpresaRepositorio;
-import br.com.kronos.backend.aplicacao.empresa.api.EmpresaServico;
-import br.com.kronos.backend.aplicacao.empresa.api.EmpresaServicoImpl;
 import br.com.kronos.backend.aplicacao.frequencia.FrequenciaRepositorio;
 import br.com.kronos.backend.aplicacao.frequencia.api.FrequenciaServico;
 import br.com.kronos.backend.aplicacao.frequencia.api.FrequenciaServicoImpl;
@@ -181,12 +178,10 @@ import br.com.kronos.backend.aplicacao.instituicao.api.InstituicaoServicoImpl;
 import br.com.kronos.backend.aplicacao.instituicao.api.MencaoServico;
 import br.com.kronos.backend.aplicacao.instituicao.api.MencaoServicoImpl;
 import br.com.kronos.backend.aplicacao.matricula.CreditoRepositorio;
-import br.com.kronos.backend.aplicacao.matricula.MatriculaRepositorio;
 import br.com.kronos.backend.aplicacao.matricula.TurmaRepositorio;
 import br.com.kronos.backend.aplicacao.matricula.api.CreditoServico;
 import br.com.kronos.backend.aplicacao.matricula.api.CreditoServicoImpl;
 import br.com.kronos.backend.aplicacao.matricula.api.MatriculaServico;
-import br.com.kronos.backend.aplicacao.matricula.api.MatriculaServicoImpl;
 import br.com.kronos.backend.aplicacao.matricula.api.TurmaServico;
 import br.com.kronos.backend.aplicacao.matricula.api.TurmaServicoImpl;
 import br.com.kronos.backend.aplicacao.ocorrencia.OcorrenciaRepositorio;
@@ -199,7 +194,6 @@ import br.com.kronos.backend.aplicacao.pessoa.DocumentoRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.EnderecoPessoaRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.FiliacaoRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.PessoaRepositorio;
-import br.com.kronos.backend.aplicacao.pessoa.ResponsavelRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.TalentoRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.TelefonePessoaRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.TitulacaoRepositorio;
@@ -211,8 +205,6 @@ import br.com.kronos.backend.aplicacao.pessoa.api.FiliacaoServico;
 import br.com.kronos.backend.aplicacao.pessoa.api.FiliacaoServicoImpl;
 import br.com.kronos.backend.aplicacao.pessoa.api.PessoaServico;
 import br.com.kronos.backend.aplicacao.pessoa.api.PessoaServicoImpl;
-import br.com.kronos.backend.aplicacao.pessoa.api.ResponsavelServico;
-import br.com.kronos.backend.aplicacao.pessoa.api.ResponsavelServicoImpl;
 import br.com.kronos.backend.aplicacao.pessoa.api.TalentoServico;
 import br.com.kronos.backend.aplicacao.pessoa.api.TalentoServicoImpl;
 import br.com.kronos.backend.aplicacao.pessoa.api.TelefonePessoaServico;
@@ -293,14 +285,6 @@ public class ConfigService {
 	}
 	
 	@Bean
-	public ResponsavelServico responsavelServico(
-			@Qualifier("modelMapper") ModelMapper modelMapper,
-			@Qualifier("responsavelRepositorio") ResponsavelRepositorio responsavelRepositorio,
-			@Qualifier("matriculaRepositorio") MatriculaRepositorio matriculaRepositorio) {
-		return new ResponsavelServicoImpl(responsavelRepositorio, matriculaRepositorio, modelMapper);
-	}
-	
-	@Bean
 	public TalentoServico talentoServico(
 			@Qualifier("modelMapper") ModelMapper modelMapper,
 			@Qualifier("talentoRepositorio") TalentoRepositorio talentoRepositorio) {
@@ -349,11 +333,6 @@ public class ConfigService {
 		return new TitulacaoServicoImpl(titulacaoRepositorio, arquivoRepositorio, modelMapper);
 	}
 	
-	@Bean
-	public EmpresaServico empresaServico(@Qualifier("empresaRepositorio") EmpresaRepositorio empresaRepositorio, 
-			@Qualifier("modelMapper") ModelMapper modelMapper) {
-		return new EmpresaServicoImpl(empresaRepositorio, modelMapper);
-	}
 	
 	@Bean
 	public CursoServico cursoServico(@Qualifier("cursoRepositorio") CursoRepositorio cursoRepositorio, 
@@ -427,15 +406,6 @@ public class ConfigService {
 		return new DisciplinaServicoImpl(disciplinaRepositorio, modelMapper);
 	}
 	
-	@Bean
-	public MatriculaServico matriculaServico(@Qualifier("matriculaRepositorio") MatriculaRepositorio matriculaRepositorio, 
-			@Qualifier("contratoRepositorio") ContratoRepositorio contratoRepositorio, 
-			@Qualifier("atestadoRepositorio") AtestadoRepositorio atestadoRepositorio, 
-			@Qualifier("servicoAutenticacao") ServicoAutenticacao servicoAutenticacao, 
-			@Qualifier("funcionarioRepositorio") FuncionarioRepositorio funcionarioRepositorio, 
-			@Qualifier("modelMapper") ModelMapper modelMapper) {
-		return new MatriculaServicoImpl(matriculaRepositorio, contratoRepositorio, atestadoRepositorio, servicoAutenticacao, funcionarioRepositorio, modelMapper);
-	}
 	
 	@Bean
 	public ContratoServico contratoServico(@Qualifier("contratoRepositorio") ContratoRepositorio contratoRepositorio,

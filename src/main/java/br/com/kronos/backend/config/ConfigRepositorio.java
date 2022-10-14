@@ -51,7 +51,6 @@ import br.com.kronos.backend.adaptadores.repositorio.disciplina.DisciplinaDireit
 import br.com.kronos.backend.adaptadores.repositorio.disciplina.DisciplinaHabilidadeRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.disciplina.DisciplinaObjetivoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.disciplina.DisciplinaRepositorioImpl;
-import br.com.kronos.backend.adaptadores.repositorio.empresa.EmpresaRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.frequencia.FrequenciaRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.funcionario.ConfiguracaoPontoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.funcionario.FuncionarioFuncaoRepositorioImpl;
@@ -66,7 +65,6 @@ import br.com.kronos.backend.adaptadores.repositorio.instituicao.EscalaRepositor
 import br.com.kronos.backend.adaptadores.repositorio.instituicao.InstituicaoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.instituicao.MencaoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.matricula.CreditoRepositorioImpl;
-import br.com.kronos.backend.adaptadores.repositorio.matricula.MatriculaRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.matricula.TurmaRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.ocorrencia.OcorrenciaRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.ocorrencia.TipoOcorrenciaRepositorioImpl;
@@ -74,7 +72,6 @@ import br.com.kronos.backend.adaptadores.repositorio.pessoa.DocumentoRepositorio
 import br.com.kronos.backend.adaptadores.repositorio.pessoa.EnderecoPessoaRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.pessoa.FiliacaoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.pessoa.PessoaRepositorioImpl;
-import br.com.kronos.backend.adaptadores.repositorio.pessoa.ResponsavelRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.pessoa.TalentoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.pessoa.TelefonePessoaRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.pessoa.TitulacaoRepositorioImpl;
@@ -124,7 +121,6 @@ import br.com.kronos.backend.aplicacao.disciplina.DisciplinaDireitoRepositorio;
 import br.com.kronos.backend.aplicacao.disciplina.DisciplinaHabilidadeRepositorio;
 import br.com.kronos.backend.aplicacao.disciplina.DisciplinaObjetivoRepositorio;
 import br.com.kronos.backend.aplicacao.disciplina.DisciplinaRepositorio;
-import br.com.kronos.backend.aplicacao.empresa.EmpresaRepositorio;
 import br.com.kronos.backend.aplicacao.frequencia.FrequenciaRepositorio;
 import br.com.kronos.backend.aplicacao.funcionario.ConfiguracaoPontoRepositorio;
 import br.com.kronos.backend.aplicacao.funcionario.FuncionarioFuncaoRepositorio;
@@ -139,7 +135,6 @@ import br.com.kronos.backend.aplicacao.instituicao.EscalaRepositorio;
 import br.com.kronos.backend.aplicacao.instituicao.InstituicaoRepositorio;
 import br.com.kronos.backend.aplicacao.instituicao.MencaoRepositorio;
 import br.com.kronos.backend.aplicacao.matricula.CreditoRepositorio;
-import br.com.kronos.backend.aplicacao.matricula.MatriculaRepositorio;
 import br.com.kronos.backend.aplicacao.matricula.TurmaRepositorio;
 import br.com.kronos.backend.aplicacao.ocorrencia.OcorrenciaRepositorio;
 import br.com.kronos.backend.aplicacao.ocorrencia.TipoOcorrenciaRepositorio;
@@ -147,7 +142,6 @@ import br.com.kronos.backend.aplicacao.pessoa.DocumentoRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.EnderecoPessoaRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.FiliacaoRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.PessoaRepositorio;
-import br.com.kronos.backend.aplicacao.pessoa.ResponsavelRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.TalentoRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.TelefonePessoaRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.TitulacaoRepositorio;
@@ -211,11 +205,6 @@ public class ConfigRepositorio {
 	}
 	
 	@Bean
-	public ResponsavelRepositorio responsavelRepositorio(@Qualifier("ds") DataSource ds) {
-		return new ResponsavelRepositorioImpl(ds);
-	}
-	
-	@Bean
 	public TalentoRepositorio talentoRepositorio(@Qualifier("ds") DataSource ds) {
 		return new TalentoRepositorioImpl(ds);
 	}
@@ -230,10 +219,6 @@ public class ConfigRepositorio {
 		return new TitulacaoRepositorioImpl(ds);
 	}
 	
-	@Bean
-	public EmpresaRepositorio empresaRepositorio(@Qualifier("ds") DataSource ds) {
-		return new EmpresaRepositorioImpl(ds);
-	}
 	
 	@Bean
 	public CursoRepositorio cursoRepositorio(@Qualifier("ds") DataSource ds) {
@@ -295,10 +280,6 @@ public class ConfigRepositorio {
 		return new DisciplinaRepositorioImpl(ds);
 	}
 	
-	@Bean
-	public MatriculaRepositorio matriculaRepositorio(@Qualifier("ds") DataSource ds) {
-		return new MatriculaRepositorioImpl(ds);
-	}
 	
 	@Bean
 	public ContratoRepositorio contratoRepositorio(@Qualifier("ds") DataSource ds) {
