@@ -1,31 +1,7 @@
 import baseService from "../BaseService";
 import mixinsMessage from "@/mixins/message";
-import SubFase from "@/model/curso/subfase/SubFase";
 import EstatisticaResultadoSubFase from "@/model/curso/subfase/EstatisticaResultadoSubFase";
-import ResultadoPesquisa from "@/model/comum/ResultadoPesquisa";
 export default {
-  combo(idCurso, idPeriodo) {
-    return baseService
-      .get(
-        "/api/cursos/periodos/fases/sub-fases/combo/curso/" +
-          idCurso +
-          "/periodo/" +
-          idPeriodo
-      )
-      .then(response => {
-        if (response && response.data) {
-          return response.data;
-        }
-        return null;
-      })
-      .catch(function(error) {
-        mixinsMessage.methods.error(
-          "Erro ao tentar listar Sub-Fases para a combo"
-        );
-        // eslint-disable-next-line no-console
-        console.error(error);
-      });
-  },
   comboSubFasesExecucaoParaDiario(idTurma, idDisciplina) {
     return baseService
       .get(
@@ -44,89 +20,6 @@ export default {
         mixinsMessage.methods.error(
           "Erro ao tentar listar Sub-Fases Execução para o diário"
         );
-        // eslint-disable-next-line no-console
-        console.error(error);
-      });
-  },
-  listarTodos(subFase, numeroPagina, qtdTotal) {
-    return baseService
-      .get("/api/cursos/periodos/fases/sub-fases", {
-        params: {
-          id: subFase ? subFase.id : null,
-          idFase: subFase ? subFase.idFase : null,
-          pagina: numeroPagina ? numeroPagina : null,
-          total: qtdTotal ? qtdTotal : null
-        }
-      })
-      .then(response => {
-        if (response && response.data) {
-          return new ResultadoPesquisa(response.data);
-        }
-        return null;
-      })
-      .catch(function(error) {
-        mixinsMessage.methods.error("Erro ao tentar listar Sub-Fases");
-        // eslint-disable-next-line no-console
-        console.error(error);
-      });
-  },
-  editar(id) {
-    return baseService
-      .get("/api/cursos/periodos/fases/sub-fases/" + id)
-      .then(response => {
-        if (response && response.data) {
-          return new SubFase(response.data);
-        }
-        return null;
-      })
-      .catch(function(error) {
-        mixinsMessage.methods.error("Erro ao tentar editar Sub-Fase");
-        // eslint-disable-next-line no-console
-        console.error(error);
-      });
-  },
-  salvar(subFase) {
-    if (subFase.id) {
-      return baseService
-        .put("/api/cursos/periodos/fases/sub-fases/" + subFase.id, subFase)
-        .then(response => {
-          mixinsMessage.methods.success(response.data);
-          return response.data;
-        })
-        .catch(function(error) {
-          mixinsMessage.methods.error(
-            "Erro ao tentar atualizar Sub-Fase",
-            error
-          );
-          // eslint-disable-next-line no-console
-          console.error(error);
-        });
-    } else {
-      return baseService
-        .post("/api/cursos/periodos/fases/sub-fases", subFase)
-        .then(response => {
-          mixinsMessage.methods.success(response.data);
-          return response.data;
-        })
-        .catch(function(error) {
-          mixinsMessage.methods.error(
-            "Erro ao tentar cadastrar Sub-Fases",
-            error
-          );
-          // eslint-disable-next-line no-console
-          console.error(error);
-        });
-    }
-  },
-  excluir(subFase) {
-    return baseService
-      .delete("/api/cursos/periodos/fases/sub-fases/" + subFase.id)
-      .then(response => {
-        mixinsMessage.methods.success(response.data);
-        return response.data;
-      })
-      .catch(function(error) {
-        mixinsMessage.methods.error("Erro ao tentar excluir Sub-Fases", error);
         // eslint-disable-next-line no-console
         console.error(error);
       });
