@@ -11,7 +11,6 @@ import br.com.kronos.backend.adaptadores.jasperreport.RelatoriosAlunosRepositori
 import br.com.kronos.backend.adaptadores.jasperreport.RelatoriosPedagogicosRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.UsuarioRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.arquivo.ArquivoRepositorioImpl;
-import br.com.kronos.backend.adaptadores.repositorio.atestado.AtestadoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.avaliacao.AvaliacaoHabilidadeRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.avaliacao.AvaliacaoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.avaliacao.GrupoAvaliacaoRepositorioImpl;
@@ -78,7 +77,6 @@ import br.com.kronos.backend.adaptadores.repositorio.resultado.ResultadoHabilida
 import br.com.kronos.backend.adaptadores.repositorio.resultado.ResultadoSubFaseRepositorioImpl;
 import br.com.kronos.backend.aplicacao.UsuarioRepositorio;
 import br.com.kronos.backend.aplicacao.arquivo.ArquivoRepositorio;
-import br.com.kronos.backend.aplicacao.atestado.AtestadoRepositorio;
 import br.com.kronos.backend.aplicacao.avaliacao.AvaliacaoHabilidadeRepositorio;
 import br.com.kronos.backend.aplicacao.avaliacao.AvaliacaoRepositorio;
 import br.com.kronos.backend.aplicacao.avaliacao.GrupoAvaliacaoRepositorio;
@@ -465,11 +463,6 @@ public class ConfigRepositorio {
 	@Bean
 	public ResultadoHabilidadeRepositorio resultadoHabilidadeRepositorio(@Qualifier("ds") DataSource ds) {
 		return new ResultadoHabilidadeRepositorioImpl(ds);
-	}
-	
-	@Bean
-	public AtestadoRepositorio atestadoRepositorio(@Qualifier("ds") DataSource ds) {
-		return new AtestadoRepositorioImpl(ds);
 	}
 	
 	@Bean

@@ -28,9 +28,6 @@ import br.com.kronos.backend.aplicacao.api.impl.comum.RelatorioServicoImpl;
 import br.com.kronos.backend.aplicacao.arquivo.ArquivoRepositorio;
 import br.com.kronos.backend.aplicacao.arquivo.api.ArquivoServico;
 import br.com.kronos.backend.aplicacao.arquivo.api.ArquivoServicoImpl;
-import br.com.kronos.backend.aplicacao.atestado.AtestadoRepositorio;
-import br.com.kronos.backend.aplicacao.atestado.api.AtestadoServico;
-import br.com.kronos.backend.aplicacao.atestado.api.AtestadoServicoImpl;
 import br.com.kronos.backend.aplicacao.avaliacao.AvaliacaoHabilidadeRepositorio;
 import br.com.kronos.backend.aplicacao.avaliacao.AvaliacaoRepositorio;
 import br.com.kronos.backend.aplicacao.avaliacao.GrupoAvaliacaoRepositorio;
@@ -643,13 +640,6 @@ public class ConfigService {
 	public ResultadoHabilidadeServico resultadoHabilidadeServico(@Qualifier("resultadoHabilidadeRepositorio") ResultadoHabilidadeRepositorio resultadoHabilidadeRepositorio,
 			@Qualifier("modelMapper") ModelMapper modelMapper) {
 		return new ResultadoHabilidadeServicoImpl(resultadoHabilidadeRepositorio, modelMapper);
-	}
-	
-	@Bean
-	public AtestadoServico atestadoServico(@Qualifier("atestadoRepositorio") AtestadoRepositorio atestadoRepositorio,
-			@Qualifier("modelMapper") ModelMapper modelMapper,
-			@Qualifier("arquivoRepositorio") ArquivoRepositorio arquivoRepositorio) {
-		return new AtestadoServicoImpl(atestadoRepositorio, modelMapper, arquivoRepositorio);
 	}
 	
 	@Bean
