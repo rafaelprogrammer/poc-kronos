@@ -66,8 +66,6 @@ import br.com.kronos.backend.adaptadores.repositorio.instituicao.InstituicaoRepo
 import br.com.kronos.backend.adaptadores.repositorio.instituicao.MencaoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.matricula.CreditoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.matricula.TurmaRepositorioImpl;
-import br.com.kronos.backend.adaptadores.repositorio.ocorrencia.OcorrenciaRepositorioImpl;
-import br.com.kronos.backend.adaptadores.repositorio.ocorrencia.TipoOcorrenciaRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.pessoa.DocumentoRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.pessoa.EnderecoPessoaRepositorioImpl;
 import br.com.kronos.backend.adaptadores.repositorio.pessoa.FiliacaoRepositorioImpl;
@@ -136,8 +134,6 @@ import br.com.kronos.backend.aplicacao.instituicao.InstituicaoRepositorio;
 import br.com.kronos.backend.aplicacao.instituicao.MencaoRepositorio;
 import br.com.kronos.backend.aplicacao.matricula.CreditoRepositorio;
 import br.com.kronos.backend.aplicacao.matricula.TurmaRepositorio;
-import br.com.kronos.backend.aplicacao.ocorrencia.OcorrenciaRepositorio;
-import br.com.kronos.backend.aplicacao.ocorrencia.TipoOcorrenciaRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.DocumentoRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.EnderecoPessoaRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.FiliacaoRepositorio;
@@ -469,16 +465,6 @@ public class ConfigRepositorio {
 	@Bean
 	public ResultadoHabilidadeRepositorio resultadoHabilidadeRepositorio(@Qualifier("ds") DataSource ds) {
 		return new ResultadoHabilidadeRepositorioImpl(ds);
-	}
-	
-	@Bean
-	public TipoOcorrenciaRepositorio tipoOcorrenciaRepositorio(@Qualifier("ds") DataSource ds) {
-		return new TipoOcorrenciaRepositorioImpl(ds);
-	}
-	
-	@Bean
-	public OcorrenciaRepositorio ocorrenciaRepositorio(@Qualifier("ds") DataSource ds) {
-		return new OcorrenciaRepositorioImpl(ds);
 	}
 	
 	@Bean

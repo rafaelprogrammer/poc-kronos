@@ -184,12 +184,6 @@ import br.com.kronos.backend.aplicacao.matricula.api.CreditoServicoImpl;
 import br.com.kronos.backend.aplicacao.matricula.api.MatriculaServico;
 import br.com.kronos.backend.aplicacao.matricula.api.TurmaServico;
 import br.com.kronos.backend.aplicacao.matricula.api.TurmaServicoImpl;
-import br.com.kronos.backend.aplicacao.ocorrencia.OcorrenciaRepositorio;
-import br.com.kronos.backend.aplicacao.ocorrencia.TipoOcorrenciaRepositorio;
-import br.com.kronos.backend.aplicacao.ocorrencia.api.OcorrenciaServico;
-import br.com.kronos.backend.aplicacao.ocorrencia.api.OcorrenciaServicoImpl;
-import br.com.kronos.backend.aplicacao.ocorrencia.api.TipoOcorrenciaServico;
-import br.com.kronos.backend.aplicacao.ocorrencia.api.TipoOcorrenciaServicoImpl;
 import br.com.kronos.backend.aplicacao.pessoa.DocumentoRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.EnderecoPessoaRepositorio;
 import br.com.kronos.backend.aplicacao.pessoa.FiliacaoRepositorio;
@@ -643,19 +637,6 @@ public class ConfigService {
 	public MencaoServico mencaoServico(@Qualifier("mencaoRepositorio") MencaoRepositorio mencaoRepositorio,
 			@Qualifier("modelMapper") ModelMapper modelMapper) {
 		return new MencaoServicoImpl(mencaoRepositorio, modelMapper);
-	}
-	
-	@Bean
-	public TipoOcorrenciaServico tipoOcorrenciaServico(@Qualifier("tipoOcorrenciaRepositorio") TipoOcorrenciaRepositorio tipoOcorrenciaRepositorio,
-			@Qualifier("modelMapper") ModelMapper modelMapper) {
-		return new TipoOcorrenciaServicoImpl(tipoOcorrenciaRepositorio, modelMapper);
-	}
-	
-	@Bean
-	public OcorrenciaServico ocorrenciaServico(@Qualifier("ocorrenciaRepositorio") OcorrenciaRepositorio ocorrenciaRepositorio,
-			@Qualifier("pessoaRepositorio") PessoaRepositorio pessoaRepositorio,
-			@Qualifier("modelMapper") ModelMapper modelMapper) {
-		return new OcorrenciaServicoImpl(ocorrenciaRepositorio, pessoaRepositorio, modelMapper);
 	}
 	
 	@Bean
