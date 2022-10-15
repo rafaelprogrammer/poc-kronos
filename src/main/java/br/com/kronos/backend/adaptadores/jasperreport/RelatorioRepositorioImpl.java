@@ -122,7 +122,7 @@ public class RelatorioRepositorioImpl extends SqlQueryRepositorio implements Rel
 	@Override
 	public byte[] exportarParaPdf(EnumRelatorios relatorio, Map<String, Object> parameters) {
 		try {
-			parameters.put("LOGO", getClass().getResourceAsStream("/".concat("Logo_Escola_Fatima.png")));
+			parameters.put("LOGO", getClass().getResourceAsStream("/".concat("teste.png")));
 			parameters.put("DATA_HORA", DateUtil.dataHoraAtualFormatada());
 			return JasperExportManager.exportReportToPdf(preencher(compilar(relatorio.arquivo()), parameters));
 		} catch (JRException | SQLException e) {
@@ -133,7 +133,7 @@ public class RelatorioRepositorioImpl extends SqlQueryRepositorio implements Rel
 	@Override
 	public byte[] exportarParaXLSX(EnumRelatorios relatorio, Map<String, Object> parameters) {
 		try {
-			parameters.put("LOGO", getClass().getResourceAsStream("/".concat("Logo_Escola_Fatima.png")));
+			parameters.put("LOGO", getClass().getResourceAsStream("/".concat("teste.png")));
 			parameters.put("DATA_HORA", DateUtil.dataHoraAtualFormatada());
 			
 			JRXlsxExporter xlsxExporter = new JRXlsxExporter();

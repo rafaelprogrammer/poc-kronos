@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>br.com.kronos</groupId>
 	<artifactId>poc-kronos-backend</artifactId>
-	<version>1.0.39</version>
+	<version>1.0.0</version>
 	<name>poc-kronos-backend</name>
 	<description>POC - KRONOS - Sistema de Gestão Educacional Módulo de Registro e Controle de Atividades dos Professores</description>
 

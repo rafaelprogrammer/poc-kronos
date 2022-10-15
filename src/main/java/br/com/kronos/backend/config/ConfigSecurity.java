@@ -53,14 +53,8 @@ public class ConfigSecurity extends WebSecurityConfigurerAdapter {
         			.antMatchers("/api/auth").permitAll()
         			//TODO Permissao total para GET ate ser mapeado as combos publicas etc...
         			.antMatchers(HttpMethod.GET, "/api/**").permitAll()
-        			.antMatchers("/api/pessoas/**", "/api/cursos/**", "/api/disciplinas/**", 
-        						"/api/matriculas/**", "/api/calendarios/**", "/api/periodos-execucoes/**", "/api/ocorrencias/**").hasAnyAuthority(Authority.SECRETARIO.name())
-        			.antMatchers("/api/pessoas/**", "/api/cursos/**", "/api/disciplinas/**", 
-    						"/api/matriculas/**").hasAnyAuthority(Authority.AUXILIAR_DE_SECRETARIO.name())
-        			.antMatchers("/api/contratos/**").hasAnyAuthority(Authority.TESOUREIRO.name(), Authority.AUXILIAR_DE_TESOUREIRO.name())
-        			.antMatchers("/api/horarios/**", "/api/basescurriculares/**", "/api/ocorrencias/**").hasAnyAuthority(Authority.COORDENADOR_DE_CURSO.name())
-        			.antMatchers("/api/diarios/**", "/api/frequencias/**", "/api/avaliacoes/**", "/api/avaliacoes/**", "/api/ocorrencias/**").hasAnyAuthority(Authority.PROFESSOR.name())
-        			.antMatchers("/api/usuarios/**").hasAnyAuthority(Authority.ADMINISTRADOR_DE_USUARIOS.name())
+        			.antMatchers("/api/diarios/**", "/api/frequencias/**", "/api/avaliacoes/**", "/api/avaliacoes/**").hasAnyAuthority(Authority.PROFESSOR.name())
+        			.antMatchers("/api/**").hasAnyAuthority(Authority.ADMINISTRADOR.name())
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(new AuthenticationTokenFilter(tokenAuthenticationService),
