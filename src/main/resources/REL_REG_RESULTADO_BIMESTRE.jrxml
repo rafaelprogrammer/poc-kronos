@@ -304,7 +304,7 @@ where r.id_turma = $P{ID_TURMA}
       and r.ano = $P{ANO_TURMA}
       and r.id_disciplina = $P{ID_DISCIPLINA}
       and r.id_sub_fase_execucao = $P{ID_SUB_FASE_EXECUCAO}   
-      group by p.numero_registro, p.nome, r.data_prevista, r.mencao, r.mencao_final, r.perc_falta, r.observacoes order by p.nome ]]>
+      group by p.numero_registro, p.nome, r.data_prevista, r.mencao, r.mencao_final, r.perc_falta, r.observacoes order by p.nome]]>
 	</queryString>
 	<field name="nr" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.label" value="nr"/>
@@ -543,8 +543,8 @@ where r.id_turma = $P{ID_TURMA}
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Escola Franciscana Nossa Senhora de Fátima
-Conjunto F, Via W5 Sul, Brasília - DF, 70390-060]]></text>
+				<text><![CDATA[TESTE ESCOLA
+Conjunto Teste, Quadra 50, Brasília - DF, 70020-000]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight">
 				<reportElement key="" x="130" y="64" width="680" height="19" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="f68685ce-07d0-410a-b688-cbdd370f2210">
