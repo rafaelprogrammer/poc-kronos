@@ -36,7 +36,7 @@ http://localhost:8080
 **INTEROPERABILIDADE**
 
 - API LISTA ALUNOS FREQUÊNCIA:
-- 
+
 curl --location --request GET 'http://localhost:8080/api/frequencias?idDisciplina=146&idAtividade=43703&idSubFaseExecucao=208&anoTurma=2022'
 
 ![This is an image](https://github.com/rafaelprogrammer/poc-kronos/blob/main/images/EvidenciaAlunosFrequenciasAPI.png)
