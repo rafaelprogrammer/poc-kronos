@@ -100,3 +100,34 @@ curl --location --request GET 'http://localhost:8080/api/avaliacoes/habilidades?
     }
 ]
 `````
+
+**USABILIDADE**
+
+- LISTA DE FREQUÊNCIA:
+
+Lista de alunos para registro de frequência. Somente é necessário um clique por aluno para registrar a frequência ou registrar para todos uma determinada frequência.
+
+![This is an image](https://github.com/rafaelprogrammer/poc-kronos/blob/main/images/EvidenciaAlunasFrequenciasUsabilidade.png)
+
+- LISTA DE RESULTADOS DE AVALIAÇÕES POR HABILIDADES:
+
+Registro das avalições por habilidades em uma só tela.
+
+![This is an image](https://github.com/rafaelprogrammer/poc-kronos/blob/main/images/EvidenciaResultadoAvaliacoesPorHabilidadeUsabilidade.png)
+
+**MANUTENABILIDADE**
+
+- DOMÍNIO DIÁRIO (CAMADA - APLICAÇÃO):
+
+Este trecho de código representa o domínio diário e um local que possui fácil acesso para alterações específicas como tamanho dos campos e obrigatoriedade.
+
+![This is an image](https://github.com/rafaelprogrammer/poc-kronos/blob/main/images/EvidenciaDiarioManutenabilidade.png)
+
+- REPOSITÓRIO FREQUÊNCIA (CAMADA - ADAPTADORES):
+
+Classe que representa o repositório frequencia. Esta camada é totalmente isolada do dominio e específica para determinadas tecnologias como exemplo o banco de dados Postgresql. Suas alterações não impactam na camada de domínio (aplicação).
+
+![This is an image](https://github.com/rafaelprogrammer/poc-kronos/blob/main/images/EvidenciaFrequenciasRepositorioManutenabilidade.png)
+
+
+
