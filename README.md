@@ -36,11 +36,67 @@ http://localhost:8080
 **INTEROPERABILIDADE**
 
 - API LISTA ALUNOS FREQUÊNCIA:
+
 curl --location --request GET 'http://localhost:8080/api/frequencias?idDisciplina=146&idAtividade=43703&idSubFaseExecucao=208&anoTurma=2022'
 
-- API LISTA ALUNOS FREQUÊNCIA:
+![This is an image](https://github.com/rafaelprogrammer/poc-kronos/blob/main/images/EvidenciaAlunosFrequenciasAPI.png)
 
-**API HABILIDADES AVALIADAS**
+````json
+[
+    {
+        "id": 645682,
+        "idAtividade": 43703,
+        "idCredito": 28949,
+        "idPessoa": 5173,
+        "aluno": "Aluno 2977",
+        "numeroAtividade": 3,
+        "frequencia": [
+            "P",
+            "P",
+            "P"
+        ]
+    },
+    {
+        "id": 645684,
+        "idAtividade": 43703,
+        "idCredito": 28977,
+        "idPessoa": 4524,
+        "aluno": "Aluno 2986",
+        "numeroAtividade": 3,
+        "frequencia": [
+            "P",
+            "P",
+            "P"
+        ]
+    }
+]
+````
+
+- API HABILIDADES AVALIADAS:
+
 curl --location --request GET 'http://localhost:8080/api/avaliacoes/habilidades?idAvaliacao=8482'
 
+![This is an image](https://github.com/rafaelprogrammer/poc-kronos/blob/main/images/EvidenciaHabilidadesDeUmaAvaliacaoAPI.png)
 
+`````json
+[
+    {
+        "id": 17046,
+        "idAvaliacao": 8482,
+        "idDisciplinaHabilidade": 51410,
+        "codigo": "EF03LP01",
+        "descricao": "Ler e escrever palavras com correspondências regulares contextuais entre grafemas e fonemas – c/qu; g/gu; r/rr; s/ss; o (e não u) e e (e não i) em sílaba átona em final de palavra – e com marcas de nasalidade (til, m, n)",
+        "bncc": true,
+        "qtdResultado": 0
+    },
+    {
+        "id": 17047,
+        "idAvaliacao": 8482,
+        "idDisciplinaHabilidade": 51459,
+        "codigo": "EF15LP03",
+        "descricao": "Localizar informações explícitas em textos",
+        "bncc": true,
+        "qtdResultado": 0
+    }
+]
+`````
